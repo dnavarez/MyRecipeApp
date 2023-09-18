@@ -16,6 +16,7 @@ class RegisterController: UIViewController {
   @IBOutlet private weak var signUpButton: UIButton!
   
   // MARK: - Properties
+  var viewModel: RegisterViewModel!
   
   // MARK: - LifeCycle
   override func viewDidLoad() {
@@ -47,7 +48,17 @@ extension RegisterController {
 // MARK: - Events
 extension RegisterController {
   @IBAction func signUpButtonTapped(_ sender: Any) {
-    // TODO: Should call register api
+    viewModel.register(
+      email: emailTextField.text,
+      password: passwordTextField.text) { [weak self] result in
+        switch result {
+        case .success(let success):
+          // TODO: - Proceed to Dashboard
+          print("success")
+        case .failure(let error):
+          print(error.localizedDescription)
+        }
+      }
   }
   
   @IBAction func signInButtonTapped(_ sender: Any) {

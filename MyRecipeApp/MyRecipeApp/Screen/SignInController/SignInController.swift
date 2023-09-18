@@ -16,6 +16,7 @@ class SignInController: UIViewController {
   @IBOutlet private weak var signInButton: UIButton!
   
   // MARK: - Properties
+  var viewModel: SignInViewModel!
   
   // MARK: - LifeCycle
   
@@ -48,7 +49,17 @@ extension SignInController {
 // MARK: - Events
 extension SignInController {
   @IBAction func signInButtonTapped(_ sender: Any) {
-    // TODO: Should call login api
+    viewModel.login(
+      email: emailTextField.text,
+      password: passwordTextField.text) { [weak self] result in
+        switch result {
+        case .success(let success):
+          // TODO: - Proceed to Dashboard
+          print("success")
+        case .failure(let error):
+          print(error.localizedDescription)
+        }
+      }
   }
   
   @IBAction func signUpButtonTapped(_ sender: Any) {

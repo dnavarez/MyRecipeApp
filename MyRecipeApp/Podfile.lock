@@ -11,6 +11,7 @@ PODS:
     - SDWebImage/Core (= 5.18.1)
   - SDWebImage/Core (5.18.1)
   - SVProgressHUD (2.2.5)
+  - Valet (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4.4)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - R.swift (~> 7.3.2)
   - SDWebImage (~> 5.18.1)
   - SVProgressHUD (~> 2.2.5)
+  - Valet (~> 4.2.0)
 
 SPEC REPOS:
   trunk:
@@ -30,6 +32,7 @@ SPEC REPOS:
     - R.swift
     - SDWebImage
     - SVProgressHUD
+    - Valet
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
@@ -39,7 +42,8 @@ SPEC CHECKSUMS:
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
   SDWebImage: ebdbcebc7933a45226d9313bd0118bc052ad458b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Valet: 371e7c0b0387f0659bb23ddd255c4718ca1f0ef9
 
-PODFILE CHECKSUM: 0d6a6aa6d60586e2307d8a26dbb4228d07ca4b59
+PODFILE CHECKSUM: c06a21f431c27d021fc72f190b1a7721593cbd2d
 
 COCOAPODS: 1.12.1

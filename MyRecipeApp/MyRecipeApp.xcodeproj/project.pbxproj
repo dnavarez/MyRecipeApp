@@ -21,6 +21,7 @@
 		342012F12AB88F3300E09A71 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342012F02AB88F3300E09A71 /* SignInViewModel.swift */; };
 		342012F32AB8902200E09A71 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342012F22AB8902200E09A71 /* RegisterController.swift */; };
 		342012F52AB8903400E09A71 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342012F42AB8903400E09A71 /* Register.storyboard */; };
+		342012F72AB8951C00E09A71 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342012F62AB8951C00E09A71 /* RegisterViewModel.swift */; };
 		75C746C908A29AB62909623F /* Pods_MyRecipeApp_MyRecipeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FF57FC308138CC8B4EF6EB /* Pods_MyRecipeApp_MyRecipeAppUITests.framework */; };
 		8C1D07FAFB4AD53236EB3F5F /* Pods_MyRecipeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7826A7A7D6299247EA98A3CF /* Pods_MyRecipeAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		342012F02AB88F3300E09A71 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		342012F22AB8902200E09A71 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		342012F42AB8903400E09A71 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		342012F62AB8951C00E09A71 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		4F6EC918DFF488C3996E45DA /* Pods-MyRecipeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipeApp.release.xcconfig"; path = "Target Support Files/Pods-MyRecipeApp/Pods-MyRecipeApp.release.xcconfig"; sourceTree = "<group>"; };
 		7826A7A7D6299247EA98A3CF /* Pods_MyRecipeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRecipeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9184514AFB2E1EE26393E387 /* Pods-MyRecipeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipeAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRecipeAppTests/Pods-MyRecipeAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		342012E02AB85F9900E09A71 /* RegisterController */ = {
 			isa = PBXGroup;
 			children = (
+				342012F62AB8951C00E09A71 /* RegisterViewModel.swift */,
 				342012F22AB8902200E09A71 /* RegisterController.swift */,
 				342012F42AB8903400E09A71 /* Register.storyboard */,
 			);
@@ -514,6 +517,7 @@
 			files = (
 				342012EB2AB86BA500E09A71 /* SignInController.swift in Sources */,
 				342012EF2AB8838500E09A71 /* UITextFieldExtension.swift in Sources */,
+				342012F72AB8951C00E09A71 /* RegisterViewModel.swift in Sources */,
 				342012F32AB8902200E09A71 /* RegisterController.swift in Sources */,
 				342012AF2AB8563C00E09A71 /* AppDelegate.swift in Sources */,
 				342012E82AB86A1100E09A71 /* R.generated.swift in Sources */,

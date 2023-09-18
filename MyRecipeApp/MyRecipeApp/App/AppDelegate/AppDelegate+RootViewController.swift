@@ -21,7 +21,7 @@ extension AppDelegate {
   func setRootViewControllerToSignIn() {
     guard let vc = R.storyboard.signIn.signInController() else { return }
     
-    let vm = SignInViewModel()
+    let vm = SignInViewModel(authService: appServices.authService)
     vc.viewModel = vm
     
     let nav = UINavigationController(rootViewController: vc)

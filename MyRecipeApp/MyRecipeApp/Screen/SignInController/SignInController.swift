@@ -47,8 +47,13 @@ extension SignInController {
 
 // MARK: - Events
 extension SignInController {
-  @IBAction func signInButtonDidTapped(_ sender: Any) {
+  @IBAction func signInButtonTapped(_ sender: Any) {
     // TODO: Should call login api
+  }
+  
+  @IBAction func signUpButtonTapped(_ sender: Any) {
+    guard let vc = R.storyboard.register.registerController() else { return }
+    navigationController?.pushViewController(vc, animated: true)
   }
 }
 

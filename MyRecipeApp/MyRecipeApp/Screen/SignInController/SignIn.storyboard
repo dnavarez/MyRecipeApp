@@ -20,8 +20,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2d8-eC-hU0">
                                 <rect key="frame" x="16" y="59" width="361" height="793"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-eB-z7N" userLabel="spacer">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="8"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="TV3-Ve-4IA"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="My Recipe App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUe-UM-XTI">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="60"/>
+                                        <rect key="frame" x="0.0" y="24" width="361" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="c53-iX-JbM"/>
                                         </constraints>
@@ -30,14 +37,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-h5-1Gc" userLabel="spacer">
-                                        <rect key="frame" x="0.0" y="76" width="361" height="8"/>
+                                        <rect key="frame" x="0.0" y="100" width="361" height="8"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="Rfa-tQ-49B"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfM-RP-pc1">
-                                        <rect key="frame" x="0.0" y="100" width="361" height="31.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="123.99999999999999" width="361" height="31.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31.329999999999998" id="4Fi-qB-DtN"/>
                                         </constraints>
@@ -45,7 +52,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Sign in to your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKV-J0-2Ye">
-                                        <rect key="frame" x="0.0" y="147.33333333333334" width="361" height="21.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="171.33333333333334" width="361" height="21.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21.670000000000002" id="b7T-cK-6Dp"/>
                                         </constraints>
@@ -54,14 +61,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-3S-60s" userLabel="spacer">
-                                        <rect key="frame" x="0.0" y="185" width="361" height="8"/>
+                                        <rect key="frame" x="0.0" y="209" width="361" height="8"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="t1u-Ve-vNh"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OfR-QX-hjK">
-                                        <rect key="frame" x="0.0" y="209" width="361" height="55"/>
+                                        <rect key="frame" x="0.0" y="233" width="361" height="55"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="O0R-1N-MYA"/>
@@ -78,7 +85,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wbx-iG-EOU">
-                                        <rect key="frame" x="0.0" y="280" width="361" height="55"/>
+                                        <rect key="frame" x="0.0" y="304" width="361" height="55"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="kRx-5r-PBG"/>
@@ -95,14 +102,14 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4D-El-4Hf" userLabel="spacer">
-                                        <rect key="frame" x="0.0" y="351" width="361" height="8"/>
+                                        <rect key="frame" x="0.0" y="375" width="361" height="8"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="xQJ-0d-uQY"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-1L-oLc">
-                                        <rect key="frame" x="0.0" y="375" width="361" height="55"/>
+                                        <rect key="frame" x="0.0" y="399" width="361" height="55"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="3Bf-ux-HwP"/>
@@ -118,11 +125,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="signInButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LtR-6K-WED"/>
+                                            <action selector="signInButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LtR-6K-WED"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-dU-0xg">
-                                        <rect key="frame" x="0.0" y="446" width="361" height="44"/>
+                                        <rect key="frame" x="0.0" y="470" width="361" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="KKo-5w-56r"/>
@@ -137,9 +144,12 @@
                                                 <integer key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pEJ-ab-143"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUm-QH-e6t" userLabel="spacer">
-                                        <rect key="frame" x="0.0" y="506" width="361" height="287"/>
+                                        <rect key="frame" x="0.0" y="530" width="361" height="263"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>

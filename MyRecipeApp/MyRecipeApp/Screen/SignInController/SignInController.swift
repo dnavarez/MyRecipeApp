@@ -13,6 +13,8 @@ class SignInController: UIViewController {
   @IBOutlet private weak var emailTextField: UITextField!
   @IBOutlet private weak var passwordTextField: UITextField!
   
+  @IBOutlet private weak var signInButton: UIButton!
+  
   // MARK: - Properties
   
   // MARK: - LifeCycle
@@ -33,17 +35,22 @@ class SignInController: UIViewController {
 // MARK: - Setups
 extension SignInController {
   func setups() {
-    setupTextFields()
+    setupTextFields(emailTextField)
+    setupTextFields(passwordTextField)
   }
   
-  func setupTextFields() {
-    self.emailTextField.delegate = self
-    self.passwordTextField.delegate = self
+  func setupTextFields(_ textField: UITextField) {
+    textField.delegate = self
+    textField.addPadding()
   }
 }
 
 // MARK: - Events
-extension SignInController {}
+extension SignInController {
+  @IBAction func signInButtonDidTapped(_ sender: Any) {
+    // TODO: Should call login api
+  }
+}
 
 // MARK: - UITextFieldDelegate
 extension SignInController: UITextFieldDelegate {
@@ -53,7 +60,8 @@ extension SignInController: UITextFieldDelegate {
     if textField == emailTextField {
       passwordTextField.becomeFirstResponder()
     } else if textField == passwordTextField {
-      // Should auto tap sign in button 
+      // Should auto tap sign in button
+      signInButton.sendActions(for: .touchUpInside)
     }
     return true
   }

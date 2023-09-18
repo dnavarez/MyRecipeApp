@@ -117,6 +117,9 @@
                                                 <integer key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LtR-6K-WED"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-dU-0xg">
                                         <rect key="frame" x="0.0" y="446" width="361" height="44"/>
@@ -154,6 +157,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="OfR-QX-hjK" id="N0p-e6-esU"/>
                         <outlet property="passwordTextField" destination="Wbx-iG-EOU" id="48R-IR-UQu"/>
+                        <outlet property="signInButton" destination="Vwx-1L-oLc" id="PqQ-Bt-r7v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

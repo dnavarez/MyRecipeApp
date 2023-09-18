@@ -15,6 +15,8 @@ enum ValidationError: Error, Equatable {
   case invalidPassword
   
   case other(message: String)
+  
+  case unknownError
 }
 
 extension ValidationError: LocalizedError {
@@ -30,6 +32,8 @@ extension ValidationError: LocalizedError {
       return NSLocalizedString("Password is Invalid!", comment: "")
     case .other(let message):
       return NSLocalizedString(message, comment: "")
+    case .unknownError:
+      return NSLocalizedString("Unknown error encountered. Pls. try again later.", comment: "")
     }
   }
 }

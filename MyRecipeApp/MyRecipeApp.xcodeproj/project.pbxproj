@@ -23,6 +23,17 @@
 		342012FB2AB8988A00E09A71 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342012FA2AB8988A00E09A71 /* AlertManager.swift */; };
 		342012FD2AB89C2300E09A71 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342012FC2AB89C2300E09A71 /* ValidationError.swift */; };
 		342013042AB8A37E00E09A71 /* String+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013032AB8A37E00E09A71 /* String+Validator.swift */; };
+		3420130A2AB8AE3F00E09A71 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342013092AB8AE3F00E09A71 /* Dashboard.storyboard */; };
+		3420130C2AB8AE5200E09A71 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420130B2AB8AE5200E09A71 /* DashboardController.swift */; };
+		3420130F2AB8B36200E09A71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3420130E2AB8B36200E09A71 /* GoogleService-Info.plist */; };
+		342013122AB8B6C100E09A71 /* UIApplication+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013112AB8B6C100E09A71 /* UIApplication+Util.swift */; };
+		342013152AB8B73C00E09A71 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013142AB8B73C00E09A71 /* AuthService.swift */; };
+		342013182AB8B7EB00E09A71 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013172AB8B7EB00E09A71 /* RegisterUserRequest.swift */; };
+		3420131B2AB8BB8D00E09A71 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420131A2AB8BB8D00E09A71 /* SessionService.swift */; };
+		3420131F2AB8BCE700E09A71 /* Valet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420131E2AB8BCE700E09A71 /* Valet.swift */; };
+		342013212AB8BE2100E09A71 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013202AB8BE2100E09A71 /* AppServices.swift */; };
+		342013272AB8D58E00E09A71 /* AppDelegate+RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013262AB8D58E00E09A71 /* AppDelegate+RootViewController.swift */; };
+		342013292AB8DA9C00E09A71 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013282AB8DA9C00E09A71 /* LoginUserRequest.swift */; };
 		8C1D07FAFB4AD53236EB3F5F /* Pods_MyRecipeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7826A7A7D6299247EA98A3CF /* Pods_MyRecipeAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +76,17 @@
 		342012FA2AB8988A00E09A71 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		342012FC2AB89C2300E09A71 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		342013032AB8A37E00E09A71 /* String+Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validator.swift"; sourceTree = "<group>"; };
+		342013092AB8AE3F00E09A71 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		3420130B2AB8AE5200E09A71 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		3420130E2AB8B36200E09A71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		342013112AB8B6C100E09A71 /* UIApplication+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Util.swift"; sourceTree = "<group>"; };
+		342013142AB8B73C00E09A71 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		342013172AB8B7EB00E09A71 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		3420131A2AB8BB8D00E09A71 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		3420131E2AB8BCE700E09A71 /* Valet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valet.swift; sourceTree = "<group>"; };
+		342013202AB8BE2100E09A71 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		342013262AB8D58E00E09A71 /* AppDelegate+RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+RootViewController.swift"; sourceTree = "<group>"; };
+		342013282AB8DA9C00E09A71 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
 		4F6EC918DFF488C3996E45DA /* Pods-MyRecipeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipeApp.release.xcconfig"; path = "Target Support Files/Pods-MyRecipeApp/Pods-MyRecipeApp.release.xcconfig"; sourceTree = "<group>"; };
 		7826A7A7D6299247EA98A3CF /* Pods_MyRecipeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRecipeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9184514AFB2E1EE26393E387 /* Pods-MyRecipeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipeAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRecipeAppTests/Pods-MyRecipeAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,11 +155,12 @@
 		342012AD2AB8563C00E09A71 /* MyRecipeApp */ = {
 			isa = PBXGroup;
 			children = (
-				342012E92AB86A4C00E09A71 /* AppDelegate */,
+				3420131C2AB8BC9600E09A71 /* App */,
+				342013162AB8B7CB00E09A71 /* Models */,
 				342012F82AB8983B00E09A71 /* Shared */,
-				342012DE2AB85F8600E09A71 /* Screen */,
-				342012B92AB8563E00E09A71 /* LaunchScreen.storyboard */,
+				342012DE2AB85F8600E09A71 /* Screens */,
 				342012E52AB8673900E09A71 /* Helpers */,
+				3420130D2AB8B34000E09A71 /* Supporting */,
 				342012E42AB8670B00E09A71 /* Resources */,
 			);
 			path = MyRecipeApp;
@@ -151,13 +174,14 @@
 			path = MyRecipeAppTests;
 			sourceTree = "<group>";
 		};
-		342012DE2AB85F8600E09A71 /* Screen */ = {
+		342012DE2AB85F8600E09A71 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				342013072AB8ADF400E09A71 /* Dashboard */,
 				342012E02AB85F9900E09A71 /* RegisterController */,
 				342012DF2AB85F8E00E09A71 /* SignInController */,
 			);
-			path = Screen;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		342012DF2AB85F8E00E09A71 /* SignInController */ = {
@@ -211,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				342012AE2AB8563C00E09A71 /* AppDelegate.swift */,
+				342013262AB8D58E00E09A71 /* AppDelegate+RootViewController.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -220,7 +245,7 @@
 			children = (
 				342013012AB8A35700E09A71 /* Foundation */,
 				342013002AB8A34900E09A71 /* UIKit */,
-				342012FF2AB8A33200E09A71 /* New Group */,
+				3420131E2AB8BCE700E09A71 /* Valet.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,16 +282,10 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		342012FF2AB8A33200E09A71 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		342013002AB8A34900E09A71 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				342013102AB8B6AB00E09A71 /* UIApplication */,
 				342012ED2AB8835400E09A71 /* UITextField */,
 			);
 			path = UIKit;
@@ -302,6 +321,100 @@
 				342012F62AB8951C00E09A71 /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		342013072AB8ADF400E09A71 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				342013082AB8AE0C00E09A71 /* DashboardController */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		342013082AB8AE0C00E09A71 /* DashboardController */ = {
+			isa = PBXGroup;
+			children = (
+				3420130B2AB8AE5200E09A71 /* DashboardController.swift */,
+				342013092AB8AE3F00E09A71 /* Dashboard.storyboard */,
+			);
+			path = DashboardController;
+			sourceTree = "<group>";
+		};
+		3420130D2AB8B34000E09A71 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				3420130E2AB8B36200E09A71 /* GoogleService-Info.plist */,
+				342012B92AB8563E00E09A71 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		342013102AB8B6AB00E09A71 /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				342013112AB8B6C100E09A71 /* UIApplication+Util.swift */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		342013132AB8B72600E09A71 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				342013142AB8B73C00E09A71 /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		342013162AB8B7CB00E09A71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				342013172AB8B7EB00E09A71 /* RegisterUserRequest.swift */,
+				342013282AB8DA9C00E09A71 /* LoginUserRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		342013192AB8BB6A00E09A71 /* SessionService */ = {
+			isa = PBXGroup;
+			children = (
+				3420131A2AB8BB8D00E09A71 /* SessionService.swift */,
+			);
+			path = SessionService;
+			sourceTree = "<group>";
+		};
+		3420131C2AB8BC9600E09A71 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				342012E92AB86A4C00E09A71 /* AppDelegate */,
+				342013232AB8C7A200E09A71 /* Services */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3420131D2AB8BCA100E09A71 /* AppServices */ = {
+			isa = PBXGroup;
+			children = (
+				342013202AB8BE2100E09A71 /* AppServices.swift */,
+			);
+			path = AppServices;
+			sourceTree = "<group>";
+		};
+		342013222AB8C77D00E09A71 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				342013132AB8B72600E09A71 /* AuthService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		342013232AB8C7A200E09A71 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3420131D2AB8BCA100E09A71 /* AppServices */,
+				342013192AB8BB6A00E09A71 /* SessionService */,
+				342013222AB8C77D00E09A71 /* Network */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		364FFC8E83D3C7F916EF10B3 /* Frameworks */ = {
@@ -422,9 +535,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				342012E22AB85FD300E09A71 /* SignIn.storyboard in Resources */,
+				3420130A2AB8AE3F00E09A71 /* Dashboard.storyboard in Resources */,
 				342012BB2AB8563E00E09A71 /* LaunchScreen.storyboard in Resources */,
 				342012B82AB8563E00E09A71 /* Assets.xcassets in Resources */,
 				342012F52AB8903400E09A71 /* Register.storyboard in Resources */,
+				3420130F2AB8B36200E09A71 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,14 +650,23 @@
 			files = (
 				342012FB2AB8988A00E09A71 /* AlertManager.swift in Sources */,
 				342013042AB8A37E00E09A71 /* String+Validator.swift in Sources */,
+				3420131F2AB8BCE700E09A71 /* Valet.swift in Sources */,
 				342012EB2AB86BA500E09A71 /* SignInController.swift in Sources */,
 				342012EF2AB8838500E09A71 /* UITextFieldExtension.swift in Sources */,
+				342013292AB8DA9C00E09A71 /* LoginUserRequest.swift in Sources */,
 				342012F72AB8951C00E09A71 /* RegisterViewModel.swift in Sources */,
 				342012F32AB8902200E09A71 /* RegisterController.swift in Sources */,
+				3420131B2AB8BB8D00E09A71 /* SessionService.swift in Sources */,
+				342013152AB8B73C00E09A71 /* AuthService.swift in Sources */,
+				342013122AB8B6C100E09A71 /* UIApplication+Util.swift in Sources */,
 				342012AF2AB8563C00E09A71 /* AppDelegate.swift in Sources */,
+				342013272AB8D58E00E09A71 /* AppDelegate+RootViewController.swift in Sources */,
+				3420130C2AB8AE5200E09A71 /* DashboardController.swift in Sources */,
 				342012E82AB86A1100E09A71 /* R.generated.swift in Sources */,
 				342012F12AB88F3300E09A71 /* SignInViewModel.swift in Sources */,
 				342012FD2AB89C2300E09A71 /* ValidationError.swift in Sources */,
+				342013182AB8B7EB00E09A71 /* RegisterUserRequest.swift in Sources */,
+				342013212AB8BE2100E09A71 /* AppServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +837,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyRecipeApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Recipe App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -722,7 +847,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dnavarez.-.MyRecipeApp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dnavarez.MyRecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -744,6 +869,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyRecipeApp/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Recipe App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -753,7 +879,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dnavarez.-.MyRecipeApp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dnavarez.MyRecipeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

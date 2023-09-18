@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.0'
+
+target 'MyRecipeApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MyRecipeApp
+  pod 'Alamofire',                          '~> 5.4.4'
+  pod 'AlamofireImage',                     '~> 4.2.0'
+  pod 'AlamofireNetworkActivityIndicator',  '~> 3.1.0'
+  pod 'AlamofireNetworkActivityLogger',     '~> 3.4.0'
+  pod 'R.swift',                            '~> 7.3.2'
+  pod 'SDWebImage',                         '~> 5.18.1'
+
+  target 'MyRecipeAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MyRecipeAppUITests' do
+    # Pods for testing
+  end
+
+end

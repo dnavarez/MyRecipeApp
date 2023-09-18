@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (5.4.4)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
+  - AlamofireNetworkActivityIndicator (3.1.0):
+    - Alamofire (~> 5.1)
+  - AlamofireNetworkActivityLogger (3.4.0):
+    - Alamofire (~> 5.4.0)
+  - R.swift (7.3.2)
+  - SDWebImage (5.18.1):
+    - SDWebImage/Core (= 5.18.1)
+  - SDWebImage/Core (5.18.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4.4)
+  - AlamofireImage (~> 4.2.0)
+  - AlamofireNetworkActivityIndicator (~> 3.1.0)
+  - AlamofireNetworkActivityLogger (~> 3.4.0)
+  - R.swift (~> 7.3.2)
+  - SDWebImage (~> 5.18.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireNetworkActivityIndicator
+    - AlamofireNetworkActivityLogger
+    - R.swift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
+  AlamofireNetworkActivityLogger: 162ab8aee00e6267a4304d7cc134e13ccfe3bcc5
+  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
+  SDWebImage: ebdbcebc7933a45226d9313bd0118bc052ad458b
+
+PODFILE CHECKSUM: 05fbd1442c13305ff40709671ca3a0f622535d81
+
+COCOAPODS: 1.12.1

@@ -19,7 +19,7 @@ final class RecipeViewModel: RecipeViewModelProtocol {
   var instruction: String = ""
   
   init(model: RecipeModel) {
-    self.name = model.name
+    self.name = model.title
     self.ingredients = model.ingredients.map({ IngredientViewModel(model: $0) })
     self.instruction = model.instruction
   }

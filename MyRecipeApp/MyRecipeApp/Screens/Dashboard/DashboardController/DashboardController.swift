@@ -38,6 +38,9 @@ private extension DashboardController {
     guard let vc = R.storyboard.home.homeController()
     else { return UINavigationController() }
     
+    let vm = HomeViewModel(firestoreServices: AppDelegate.shared.appServices.firestoreServices)
+    vc.viewModel = vm
+    
     let nav = UINavigationController(rootViewController: vc)
     nav.tabBarItem.title = "Home"
     nav.tabBarItem.image = R.image.iconHome()

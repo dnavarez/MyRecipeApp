@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let appServices = AppServices()
     self.appServices = appServices
     
+    applyAppStyle()
+    
     self.window = UIWindow(frame: UIScreen.main.bounds)
     updateRootViewController()
     self.window?.makeKeyAndVisible()

@@ -34,6 +34,13 @@
 		342013212AB8BE2100E09A71 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013202AB8BE2100E09A71 /* AppServices.swift */; };
 		342013272AB8D58E00E09A71 /* AppDelegate+RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013262AB8D58E00E09A71 /* AppDelegate+RootViewController.swift */; };
 		342013292AB8DA9C00E09A71 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013282AB8DA9C00E09A71 /* LoginUserRequest.swift */; };
+		342013312AB94C0900E09A71 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013302AB94C0900E09A71 /* RecipeController.swift */; };
+		342013332AB94C1500E09A71 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342013322AB94C1500E09A71 /* Recipe.storyboard */; };
+		342013382AB952A900E09A71 /* UITableView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013372AB952A900E09A71 /* UITableView+Styles.swift */; };
+		3420133B2AB9586600E09A71 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342013392AB9586600E09A71 /* RecipeCell.swift */; };
+		3420133C2AB9586600E09A71 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3420133A2AB9586600E09A71 /* RecipeCell.xib */; };
+		3420133E2AB95A5200E09A71 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420133D2AB95A5200E09A71 /* UITableView+Utils.swift */; };
+		348C790D2AB9689200412059 /* AppDelegate+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C790C2AB9689200412059 /* AppDelegate+Style.swift */; };
 		8C1D07FAFB4AD53236EB3F5F /* Pods_MyRecipeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7826A7A7D6299247EA98A3CF /* Pods_MyRecipeAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +94,13 @@
 		342013202AB8BE2100E09A71 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		342013262AB8D58E00E09A71 /* AppDelegate+RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+RootViewController.swift"; sourceTree = "<group>"; };
 		342013282AB8DA9C00E09A71 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
+		342013302AB94C0900E09A71 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
+		342013322AB94C1500E09A71 /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
+		342013372AB952A900E09A71 /* UITableView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Styles.swift"; sourceTree = "<group>"; };
+		342013392AB9586600E09A71 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		3420133A2AB9586600E09A71 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
+		3420133D2AB95A5200E09A71 /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		348C790C2AB9689200412059 /* AppDelegate+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Style.swift"; sourceTree = "<group>"; };
 		4F6EC918DFF488C3996E45DA /* Pods-MyRecipeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipeApp.release.xcconfig"; path = "Target Support Files/Pods-MyRecipeApp/Pods-MyRecipeApp.release.xcconfig"; sourceTree = "<group>"; };
 		7826A7A7D6299247EA98A3CF /* Pods_MyRecipeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRecipeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9184514AFB2E1EE26393E387 /* Pods-MyRecipeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipeAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyRecipeAppTests/Pods-MyRecipeAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +191,7 @@
 		342012DE2AB85F8600E09A71 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3420132A2AB94A5D00E09A71 /* RecipeController */,
 				342013072AB8ADF400E09A71 /* Dashboard */,
 				342012E02AB85F9900E09A71 /* RegisterController */,
 				342012DF2AB85F8E00E09A71 /* SignInController */,
@@ -236,6 +251,7 @@
 			children = (
 				342012AE2AB8563C00E09A71 /* AppDelegate.swift */,
 				342013262AB8D58E00E09A71 /* AppDelegate+RootViewController.swift */,
+				348C790C2AB9689200412059 /* AppDelegate+Style.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -285,6 +301,7 @@
 		342013002AB8A34900E09A71 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				342013362AB9526E00E09A71 /* UITableView */,
 				342013102AB8B6AB00E09A71 /* UIApplication */,
 				342012ED2AB8835400E09A71 /* UITextField */,
 			);
@@ -334,6 +351,8 @@
 		342013082AB8AE0C00E09A71 /* DashboardController */ = {
 			isa = PBXGroup;
 			children = (
+				342013352AB9517400E09A71 /* Cells */,
+				342013342AB9516500E09A71 /* ViewModels */,
 				3420130B2AB8AE5200E09A71 /* DashboardController.swift */,
 				342013092AB8AE3F00E09A71 /* Dashboard.storyboard */,
 			);
@@ -415,6 +434,40 @@
 				342013222AB8C77D00E09A71 /* Network */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3420132A2AB94A5D00E09A71 /* RecipeController */ = {
+			isa = PBXGroup;
+			children = (
+				342013302AB94C0900E09A71 /* RecipeController.swift */,
+				342013322AB94C1500E09A71 /* Recipe.storyboard */,
+			);
+			path = RecipeController;
+			sourceTree = "<group>";
+		};
+		342013342AB9516500E09A71 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		342013352AB9517400E09A71 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				342013392AB9586600E09A71 /* RecipeCell.swift */,
+				3420133A2AB9586600E09A71 /* RecipeCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		342013362AB9526E00E09A71 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				342013372AB952A900E09A71 /* UITableView+Styles.swift */,
+				3420133D2AB95A5200E09A71 /* UITableView+Utils.swift */,
+			);
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		364FFC8E83D3C7F916EF10B3 /* Frameworks */ = {
@@ -536,10 +589,12 @@
 			files = (
 				342012E22AB85FD300E09A71 /* SignIn.storyboard in Resources */,
 				3420130A2AB8AE3F00E09A71 /* Dashboard.storyboard in Resources */,
+				342013332AB94C1500E09A71 /* Recipe.storyboard in Resources */,
 				342012BB2AB8563E00E09A71 /* LaunchScreen.storyboard in Resources */,
 				342012B82AB8563E00E09A71 /* Assets.xcassets in Resources */,
 				342012F52AB8903400E09A71 /* Register.storyboard in Resources */,
 				3420130F2AB8B36200E09A71 /* GoogleService-Info.plist in Resources */,
+				3420133C2AB9586600E09A71 /* RecipeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,16 +712,21 @@
 				342012F72AB8951C00E09A71 /* RegisterViewModel.swift in Sources */,
 				342012F32AB8902200E09A71 /* RegisterController.swift in Sources */,
 				3420131B2AB8BB8D00E09A71 /* SessionService.swift in Sources */,
+				342013382AB952A900E09A71 /* UITableView+Styles.swift in Sources */,
 				342013152AB8B73C00E09A71 /* AuthService.swift in Sources */,
 				342013122AB8B6C100E09A71 /* UIApplication+Util.swift in Sources */,
 				342012AF2AB8563C00E09A71 /* AppDelegate.swift in Sources */,
 				342013272AB8D58E00E09A71 /* AppDelegate+RootViewController.swift in Sources */,
+				342013312AB94C0900E09A71 /* RecipeController.swift in Sources */,
 				3420130C2AB8AE5200E09A71 /* DashboardController.swift in Sources */,
 				342012E82AB86A1100E09A71 /* R.generated.swift in Sources */,
+				3420133B2AB9586600E09A71 /* RecipeCell.swift in Sources */,
+				348C790D2AB9689200412059 /* AppDelegate+Style.swift in Sources */,
 				342012F12AB88F3300E09A71 /* SignInViewModel.swift in Sources */,
 				342012FD2AB89C2300E09A71 /* ValidationError.swift in Sources */,
 				342013182AB8B7EB00E09A71 /* RegisterUserRequest.swift in Sources */,
 				342013212AB8BE2100E09A71 /* AppServices.swift in Sources */,
+				3420133E2AB95A5200E09A71 /* UITableView+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

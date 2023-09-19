@@ -12,6 +12,7 @@ import Valet
 protocol AppServicesProtocol {
   var sessionService: SessionServiceProtocol { get }
   var authService: AuthServiceProtocol { get }
+  var createService: CreateServiceProtocol { get }
 }
 
 final class AppServices: AppServicesProtocol {
@@ -19,6 +20,7 @@ final class AppServices: AppServicesProtocol {
   
   var sessionService: SessionServiceProtocol
   var authService: AuthServiceProtocol
+  var createService: CreateServiceProtocol
   
   let valet = Valet.valet(
     with: Identifier(nonEmpty: Bundle.main.bundleIdentifier!)!,
@@ -29,5 +31,6 @@ final class AppServices: AppServicesProtocol {
   init() {
     sessionService = SessionService(valet: valet)
     authService = AuthService()
+    createService = CreateService()
   }
 }

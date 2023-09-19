@@ -94,6 +94,19 @@ private extension AddRecipeController {
       self?.tableView.reloadData()
     }
   }
+  
+  func updateRecipeInstruction() {
+    guard let vc = R.storyboard.addInstruction.addInstructionController() else { return }
+    vc.onAccept = { [weak self] instruction in
+      self?.viewModel.recipeVM.instruction = instruction
+      self?.tableView.reloadData()
+    }
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .fullScreen
+    
+    navigationController?.present(nav, animated: true)
+  }
 }
 
 // MARK: - Events
@@ -135,7 +148,7 @@ extension AddRecipeController: UITableViewDelegate, UITableViewDataSource {
     switch indexPath.section {
     case 0: return recipeTitleCell()
     case 1: return ingredientCellAtIndexPath(indexPath)
-    case 2: return instructionCellAtIndexPath(indexPath)
+    case 2: return recipeInstructionCell(indexPath)
     default:
       return UITableViewCell()
     }
@@ -154,7 +167,7 @@ extension AddRecipeController: UITableViewDelegate, UITableViewDataSource {
         return headerView
       }
     case 2:
-      if let headerView = recipeSectionView(with: "Instruction") {
+      if let headerView = recipeSectionView(with: "Instructions") {
         headerView.addButton.isHidden = true
         return headerView
       }
@@ -226,15 +239,6 @@ private extension AddRecipeController {
     return cell
   }
   
-  func instructionCellAtIndexPath(
-    _ indexPath: IndexPath
-  ) -> UITableViewCell {
-    let emptyCell = emptyCellWithMessage("No Instruction added yet.")
-    let instructionCell = recipeInstructionCell(indexPath)
-    let cell = viewModel.recipeVM.instruction.isEmpty ? emptyCell : instructionCell
-    return cell
-  }
-  
   func recipeInstructionCell(
     _ indexPath: IndexPath
   ) -> RecipeInstructionCell {
@@ -243,7 +247,11 @@ private extension AddRecipeController {
     ) as? RecipeInstructionCell
     else { return RecipeInstructionCell() }
     
-    cell.instructionLabel.text = viewModel.recipeVM.instruction
+    cell.updateRecipeInstruction(viewModel.recipeVM.instruction)
+    
+    cell.onUpdateRecipeInstruction = { [weak self] in
+      self?.updateRecipeInstruction()
+    }
     
     return cell
   }

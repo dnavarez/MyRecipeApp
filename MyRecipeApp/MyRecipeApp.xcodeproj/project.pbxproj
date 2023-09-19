@@ -43,7 +43,6 @@
 		3467160E2AB9D1FD00DE7864 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467160D2AB9D1FD00DE7864 /* RecipeModel.swift */; };
 		346716102AB9D28700DE7864 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467160F2AB9D28700DE7864 /* IngredientModel.swift */; };
 		346716122AB9D92700DE7864 /* AddRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346716112AB9D92700DE7864 /* AddRecipeViewModel.swift */; };
-		346716152AB9D9D300DE7864 /* CreateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346716142AB9D9D300DE7864 /* CreateService.swift */; };
 		346716182AB9DDE800DE7864 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346716172AB9DDE800DE7864 /* RecipeViewModel.swift */; };
 		3467161B2AB9E14200DE7864 /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467161A2AB9E14200DE7864 /* IngredientViewModel.swift */; };
 		348C790D2AB9689200412059 /* AppDelegate+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C790C2AB9689200412059 /* AppDelegate+Style.swift */; };
@@ -63,6 +62,8 @@
 		348C79392AB9AD1C00412059 /* RecipeInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348C79372AB9AD1C00412059 /* RecipeInstructionCell.xib */; };
 		34E807D92AB9FC4C00F01DD8 /* AddInstructionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E807D82AB9FC4C00F01DD8 /* AddInstructionController.swift */; };
 		34E807DB2AB9FC5700F01DD8 /* AddInstruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E807DA2AB9FC5700F01DD8 /* AddInstruction.storyboard */; };
+		34E807DD2ABA0C5400F01DD8 /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E807DC2ABA0C5400F01DD8 /* FirestoreServices.swift */; };
+		34E807DF2ABA18C100F01DD8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E807DE2ABA18C100F01DD8 /* HomeViewModel.swift */; };
 		34EBDA882AB9B133005E0204 /* RecipeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EBDA872AB9B133005E0204 /* RecipeHeaderView.swift */; };
 		34EBDA8A2AB9B1BB005E0204 /* RecipeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34EBDA892AB9B1BB005E0204 /* RecipeHeaderView.xib */; };
 		34EBDA8E2AB9B696005E0204 /* RecipeEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EBDA8C2AB9B695005E0204 /* RecipeEmptyCell.swift */; };
@@ -129,7 +130,6 @@
 		3467160D2AB9D1FD00DE7864 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		3467160F2AB9D28700DE7864 /* IngredientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		346716112AB9D92700DE7864 /* AddRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewModel.swift; sourceTree = "<group>"; };
-		346716142AB9D9D300DE7864 /* CreateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateService.swift; sourceTree = "<group>"; };
 		346716172AB9DDE800DE7864 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		3467161A2AB9E14200DE7864 /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
 		348C790C2AB9689200412059 /* AppDelegate+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Style.swift"; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 		348C79372AB9AD1C00412059 /* RecipeInstructionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeInstructionCell.xib; sourceTree = "<group>"; };
 		34E807D82AB9FC4C00F01DD8 /* AddInstructionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInstructionController.swift; sourceTree = "<group>"; };
 		34E807DA2AB9FC5700F01DD8 /* AddInstruction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddInstruction.storyboard; sourceTree = "<group>"; };
+		34E807DC2ABA0C5400F01DD8 /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
+		34E807DE2ABA18C100F01DD8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		34EBDA872AB9B133005E0204 /* RecipeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHeaderView.swift; sourceTree = "<group>"; };
 		34EBDA892AB9B1BB005E0204 /* RecipeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeHeaderView.xib; sourceTree = "<group>"; };
 		34EBDA8C2AB9B695005E0204 /* RecipeEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEmptyCell.swift; sourceTree = "<group>"; };
@@ -434,14 +436,6 @@
 			path = UIApplication;
 			sourceTree = "<group>";
 		};
-		342013132AB8B72600E09A71 /* AuthService */ = {
-			isa = PBXGroup;
-			children = (
-				342013142AB8B73C00E09A71 /* AuthService.swift */,
-			);
-			path = AuthService;
-			sourceTree = "<group>";
-		};
 		342013162AB8B7CB00E09A71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,8 +474,8 @@
 		342013222AB8C77D00E09A71 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				346716132AB9D9A500DE7864 /* CRUDServices */,
-				342013132AB8B72600E09A71 /* AuthService */,
+				342013142AB8B73C00E09A71 /* AuthService.swift */,
+				34E807DC2ABA0C5400F01DD8 /* FirestoreServices.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -536,14 +530,6 @@
 			path = AlertTextFieldController;
 			sourceTree = "<group>";
 		};
-		346716132AB9D9A500DE7864 /* CRUDServices */ = {
-			isa = PBXGroup;
-			children = (
-				346716142AB9D9D300DE7864 /* CreateService.swift */,
-			);
-			path = CRUDServices;
-			sourceTree = "<group>";
-		};
 		346716192AB9E12500DE7864 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +553,7 @@
 		348C79132AB96BC200412059 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				34E807DE2ABA18C100F01DD8 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -943,10 +930,10 @@
 				348C792A2AB9AC6C00412059 /* RecipeTitleCell.swift in Sources */,
 				3467161B2AB9E14200DE7864 /* IngredientViewModel.swift in Sources */,
 				3420131F2AB8BCE700E09A71 /* Valet.swift in Sources */,
+				34E807DD2ABA0C5400F01DD8 /* FirestoreServices.swift in Sources */,
 				3467160E2AB9D1FD00DE7864 /* RecipeModel.swift in Sources */,
 				342012EB2AB86BA500E09A71 /* SignInController.swift in Sources */,
 				3467160C2AB9C4ED00DE7864 /* AlertTextFieldController.swift in Sources */,
-				346716152AB9D9D300DE7864 /* CreateService.swift in Sources */,
 				342012EF2AB8838500E09A71 /* UITextFieldExtension.swift in Sources */,
 				342012F72AB8951C00E09A71 /* RegisterViewModel.swift in Sources */,
 				346716182AB9DDE800DE7864 /* RecipeViewModel.swift in Sources */,
@@ -957,6 +944,7 @@
 				348C791E2AB9A24C00412059 /* MyRecipeCell.swift in Sources */,
 				342013382AB952A900E09A71 /* UITableView+Styles.swift in Sources */,
 				342013152AB8B73C00E09A71 /* AuthService.swift in Sources */,
+				34E807DF2ABA18C100F01DD8 /* HomeViewModel.swift in Sources */,
 				342013122AB8B6C100E09A71 /* UIApplication+Util.swift in Sources */,
 				342012AF2AB8563C00E09A71 /* AppDelegate.swift in Sources */,
 				34E807D92AB9FC4C00F01DD8 /* AddInstructionController.swift in Sources */,

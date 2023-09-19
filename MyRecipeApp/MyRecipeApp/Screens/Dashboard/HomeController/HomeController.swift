@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import SVProgressHUD
 
 class HomeController: UIViewController {
   
@@ -14,12 +15,14 @@ class HomeController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   // MARK: - Properties
+  var viewModel: HomeViewModelProtocol!
   
   // MARK: - LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setups()
+    fetchRecipes()
   }
 }
 
@@ -56,6 +59,24 @@ private extension HomeController {
   }
 }
 
+// MARK: - Firebase
+private extension HomeController {
+  func fetchRecipes() {
+    SVProgressHUD.show()
+    
+    viewModel.fetchRecipes { [weak self] result in
+      SVProgressHUD.dismiss()
+      
+      switch result {
+      case .success(_):
+        self?.tableView.reloadData()
+      case .failure(let error):
+        SVProgressHUD.showError(withStatus: error.localizedDescription)
+      }
+    }
+  }
+}
+
 // MARK: - Events
 private extension HomeController {
   @objc
@@ -82,7 +103,7 @@ private extension HomeController {
   func didTapAddRecipe() {
     guard let vc = R.storyboard.addRecipe.addRecipeController() else { return }
     
-    let vm = AddRecipeViewModel(createService: AppDelegate.shared.appServices.createService)
+    let vm = AddRecipeViewModel(firestoreServices: AppDelegate.shared.appServices.firestoreServices)
     vc.viewModel = vm
     
     let nav = UINavigationController(rootViewController: vc)
@@ -95,7 +116,7 @@ private extension HomeController {
 // MARK: - Delegates
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return viewModel.items.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,6 +124,9 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
       withIdentifier: R.nib.recipeCell.name
     ) as? RecipeCell
     else { return UITableViewCell() }
+    
+    let vm = viewModel.items[indexPath.row]
+    cell.viewModel = vm
     
     return cell
   }

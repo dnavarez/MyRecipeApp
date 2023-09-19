@@ -28,9 +28,10 @@ private extension DashboardController {
   }
   
   func setupTabs() {
-    let homeVC = homeController()
-    
-    setViewControllers([homeVC], animated: true)
+    setViewControllers([
+      homeController(),
+      myRecipeController()
+    ], animated: true)
   }
   
   func homeController() -> UINavigationController {
@@ -40,6 +41,18 @@ private extension DashboardController {
     let nav = UINavigationController(rootViewController: vc)
     nav.tabBarItem.title = "Home"
     nav.tabBarItem.image = R.image.iconHome()
+    nav.modalPresentationStyle = .fullScreen
+    
+    return nav
+  }
+  
+  func myRecipeController() -> UINavigationController {
+    guard let vc = R.storyboard.myRecipe.myRecipeController()
+    else { return UINavigationController() }
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.tabBarItem.title = "My Recipe"
+    nav.tabBarItem.image = R.image.iconList()
     nav.modalPresentationStyle = .fullScreen
     
     return nav

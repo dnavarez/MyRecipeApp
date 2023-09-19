@@ -51,7 +51,7 @@ extension RegisterViewModel {
     password: String,
     completion: @escaping (Result<Void, ValidationError>) -> Void
   ) {
-    let userRequestParam = RegisterUserRequest(email: email, password: password)
+    let userRequestParam = UserModel(email: email, password: password)
     authService.registerUser(
       with: userRequestParam
     ) { result in

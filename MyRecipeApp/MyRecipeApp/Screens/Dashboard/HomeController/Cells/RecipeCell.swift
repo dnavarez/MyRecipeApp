@@ -12,18 +12,23 @@ class RecipeCell: UITableViewCell {
   // MARK: - IBOutlet
   @IBOutlet weak var recipeImageView: UIImageView!
   @IBOutlet weak var recipeNameLabel: UILabel!
-  @IBOutlet weak var ownerLabel: UILabel!
   
   // MARK: - Properties
+  var viewModel: RecipeViewModelProtocol! {
+    didSet {
+      update()
+    }
+  }
   
   // MARK: - LifeCycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
   }
 }
 
 // MARK: - Setups
 private extension RecipeCell {
-  func setups() {}
+  func update() {
+    recipeNameLabel.text = viewModel.name
+  }
 }

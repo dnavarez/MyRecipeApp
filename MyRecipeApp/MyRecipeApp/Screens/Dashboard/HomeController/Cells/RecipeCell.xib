@@ -22,9 +22,9 @@
                         <rect key="frame" x="16" y="0.0" width="288" height="300"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-recipe-sample" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-xb-TPz">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="261"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="9ho-m6-CEE"/>
+                                    <constraint firstAttribute="height" constant="261" id="9ho-m6-CEE"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -33,28 +33,19 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GU-m0-GZn" userLabel="spacer">
-                                <rect key="frame" x="0.0" y="240" width="288" height="6"/>
+                                <rect key="frame" x="0.0" y="261" width="288" height="6"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="6" id="les-ed-eIF"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpx-BU-qnL">
-                                <rect key="frame" x="0.0" y="246" width="288" height="21"/>
+                                <rect key="frame" x="0.0" y="267" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1br-Xu-GWu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9U-bf-P5k">
-                                <rect key="frame" x="0.0" y="267" width="288" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rKJ-JD-Rev"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd7-kE-vhb" userLabel="spacer">
@@ -77,7 +68,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ownerLabel" destination="s9U-bf-P5k" id="cVj-pI-4pE"/>
                 <outlet property="recipeImageView" destination="6Om-xb-TPz" id="F4a-UY-HDC"/>
                 <outlet property="recipeNameLabel" destination="Qpx-BU-qnL" id="vhV-gW-7qG"/>
             </connections>
@@ -86,9 +76,6 @@
     </objects>
     <resources>
         <image name="img-recipe-sample" width="1500" height="1099"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

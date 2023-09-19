@@ -60,12 +60,35 @@ private extension HomeController {
 private extension HomeController {
   @objc
   func didTapLogout() {
-    try? Auth.auth().signOut()
+    let alertVC = UIAlertController(
+      title: "Are you sure you want to log out?",
+      message: nil,
+      preferredStyle: .alert
+    )
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+    let logoutAction = UIAlertAction(title: "Logout", style: .default, handler: { _ in
+      try? Auth.auth().signOut()
+      AppDelegate.shared.updateRootViewController()
+    })
+    
+    alertVC.addAction(cancelAction)
+    alertVC.addAction(logoutAction)
+    
+    self.present(alertVC, animated: true)
   }
   
   @objc
   func didTapAddRecipe() {
-    try? Auth.auth().signOut()
+    guard let vc = R.storyboard.addRecipe.addRecipeController() else { return }
+    
+    let vm = AddRecipeViewModel(createService: AppDelegate.shared.appServices.createService)
+    vc.viewModel = vm
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .fullScreen
+    
+    navigationController?.present(nav, animated: true)
   }
 }
 

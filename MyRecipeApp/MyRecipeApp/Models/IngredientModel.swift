@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IngredientModel {
+struct IngredientModel: Codable {
   let name: String
   let quantity: String
 }

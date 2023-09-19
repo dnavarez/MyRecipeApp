@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct RecipeModel {
-  let name: String
+struct RecipeModel: Codable {
+  let title: String
   let ingredients: [IngredientModel]
   let instruction: String
 }

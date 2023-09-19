@@ -14,13 +14,13 @@ protocol AuthServiceProtocol {
   /// - Parameters:
   ///   - userRequest: The user information (email and password)
   ///   - completion: A completion with success or failure response
-  func registerUser(with userRequest: RegisterUserRequest, completion: @escaping (Result<User?, ValidationError>) -> Void)
+  func registerUser(with userRequest: UserModel, completion: @escaping (Result<User?, ValidationError>) -> Void)
   
   /// A method to login user
   /// - Parameters:
   ///   - userRequest: The user information (email and password)
   ///   - completion: A completion with success or failure response
-  func loginUser(with userRequest: LoginUserRequest, completion: @escaping (Result<Void, ValidationError>) -> Void)
+  func loginUser(with userRequest: UserModel, completion: @escaping (Result<Void, ValidationError>) -> Void)
 }
 
 final class AuthService: AuthServiceProtocol {
@@ -29,7 +29,7 @@ final class AuthService: AuthServiceProtocol {
 
 extension AuthService {
   func registerUser(
-    with userRequest: RegisterUserRequest,
+    with userRequest: UserModel,
     completion: @escaping (Result<User?, ValidationError>) -> Void
   ) {
     let email = userRequest.email
@@ -68,7 +68,7 @@ extension AuthService {
   }
   
   func loginUser(
-    with userRequest: LoginUserRequest,
+    with userRequest: UserModel,
     completion: @escaping (Result<Void, ValidationError>) -> Void
   ) {
     Auth.auth().signIn(

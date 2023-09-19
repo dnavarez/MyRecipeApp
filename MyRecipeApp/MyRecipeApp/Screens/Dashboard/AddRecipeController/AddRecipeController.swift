@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddRecipeController: UIViewController {
   
@@ -113,7 +114,18 @@ private extension AddRecipeController {
 private extension AddRecipeController {
   @objc
   func didTapSaveButton() {
+    SVProgressHUD.show()
     
+    viewModel.postRecipe { [weak self] result in
+      SVProgressHUD.dismiss()
+      
+      switch result {
+      case .success(_):
+        SVProgressHUD.showSuccess(withStatus: "Recipe has been successfully posted.")
+      case .failure(let error):
+        SVProgressHUD.showError(withStatus: error.localizedDescription)
+      }
+    }
   }
   
   @objc

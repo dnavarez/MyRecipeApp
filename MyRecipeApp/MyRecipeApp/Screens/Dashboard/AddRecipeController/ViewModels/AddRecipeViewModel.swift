@@ -17,13 +17,13 @@ protocol AddRecipeViewModelProtocol {
 
 final class AddRecipeViewModel: AddRecipeViewModelProtocol {
   var recipeVM: RecipeViewModelProtocol
-  private var createService: CreateServiceProtocol
+  private var firestoreServices: FirestoreServicesProtocol
   
   init(
-    createService: CreateServiceProtocol
+    firestoreServices: FirestoreServicesProtocol
   ) {
-    self.createService = createService
-    recipeVM = RecipeViewModel(model: RecipeModel(name: "", ingredients: [], instruction: ""))
+    self.firestoreServices = firestoreServices
+    recipeVM = RecipeViewModel(model: RecipeModel(title: "", ingredients: [], instruction: ""))
   }
 }
 
@@ -37,12 +37,12 @@ extension AddRecipeViewModel {
     })
     
     let model = RecipeModel(
-      name: recipeVM.name,
+      title: recipeVM.name,
       ingredients: ingredientModels,
       instruction: recipeVM.instruction
     )
     
-    createService.postRecipe(with: model) { result in
+    firestoreServices.postRecipe(with: model) { result in
       switch result {
       case .success(let model):
         completion(.success(model))

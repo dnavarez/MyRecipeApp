@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import FirebaseAuth
 
-class DashboardController: UIViewController {
+class DashboardController: UITabBarController {
   
   // MARK: - IBOutlet
-  @IBOutlet weak var tableView: UITableView!
   
   // MARK: - Properties
   
@@ -26,61 +24,30 @@ class DashboardController: UIViewController {
 // MARK: - Setups
 private extension DashboardController {
   func setups() {
-    setupNavigationBar()
-    setupTableView()
+    setupTabs() 
   }
   
-  func setupNavigationBar() {
-    navigationItem.title = "My Recipe App"
+  func setupTabs() {
+    let homeVC = homeController()
     
-    let signOutBtn = UIBarButtonItem(
-      image: R.image.iconLogout(),
-      style: .done,
-      target: self,
-      action: #selector(didTapLogout)
-    )
-
-    let addRecipeBtn = UIBarButtonItem(
-      image: R.image.iconPlus(),
-      style: .done,
-      target: self,
-      action: #selector(didTapAddRecipe)
-    )
-
-    navigationItem.rightBarButtonItems = [signOutBtn, addRecipeBtn]
+    setViewControllers([homeVC], animated: true)
   }
   
-  func setupTableView() {
-    tableView.addPadding()
-    tableView.registerCells(nibs: [R.nib.recipeCell])
+  func homeController() -> UINavigationController {
+    guard let vc = R.storyboard.home.homeController()
+    else { return UINavigationController() }
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.tabBarItem.title = "Home"
+    nav.tabBarItem.image = R.image.iconHome()
+    nav.modalPresentationStyle = .fullScreen
+    
+    return nav
   }
 }
 
 // MARK: - Events
 private extension DashboardController {
-  @objc
-  func didTapLogout() {
-    try? Auth.auth().signOut()
-  }
-  
-  @objc
-  func didTapAddRecipe() {
-    try? Auth.auth().signOut()
-  }
 }
 
 // MARK: - Delegates
-extension DashboardController: UITableViewDelegate, UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: R.nib.recipeCell.name
-    ) as? RecipeCell
-    else { return UITableViewCell() }
-    
-    return cell
-  }
-}

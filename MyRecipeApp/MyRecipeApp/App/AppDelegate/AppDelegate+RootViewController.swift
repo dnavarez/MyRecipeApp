@@ -31,9 +31,6 @@ extension AppDelegate {
   
   func setRootViewControllerToDashboard() {
     guard let vc = R.storyboard.dashboard.dashboardController() else { return }
-    
-    let nav = UINavigationController(rootViewController: vc)
-    nav.modalPresentationStyle = .fullScreen
-    self.window?.rootViewController = nav
+    self.window?.rootViewController = vc
   }
 }

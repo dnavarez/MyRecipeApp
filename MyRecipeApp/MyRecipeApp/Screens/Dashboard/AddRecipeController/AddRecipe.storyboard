@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Recipe Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddRecipeController" id="Y6W-OH-hqX" customClass="AddRecipeController" customModule="MyRecipeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vqJ-Tn-D2n">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="eEq-E3-QJP">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="7tw-oL-tcl">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                            <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPm-2Q-40h">
+                                            <rect key="frame" x="342" y="16" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="7D9-UW-vVq"/>
+                                                <constraint firstAttribute="height" constant="35" id="jaf-55-u8c"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="icon-add-photo"/>
+                                            <connections>
+                                                <action selector="addRecipeImageButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WKZ-cc-6Oa"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="7tw-oL-tcl" secondAttribute="trailing" id="9uZ-et-ukO"/>
+                                        <constraint firstItem="7tw-oL-tcl" firstAttribute="top" secondItem="eEq-E3-QJP" secondAttribute="top" id="G6c-bI-dBn"/>
+                                        <constraint firstAttribute="bottom" secondItem="7tw-oL-tcl" secondAttribute="bottom" id="J79-pf-3xc"/>
+                                        <constraint firstItem="7tw-oL-tcl" firstAttribute="leading" secondItem="eEq-E3-QJP" secondAttribute="leading" id="chm-TS-8mn"/>
+                                        <constraint firstAttribute="trailing" secondItem="kPm-2Q-40h" secondAttribute="trailing" constant="16" id="imK-JQ-8BB"/>
+                                        <constraint firstItem="kPm-2Q-40h" firstAttribute="top" secondItem="eEq-E3-QJP" secondAttribute="top" constant="16" id="iuP-b3-BeQ"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="Auy-3U-lOs"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="UZ2-WA-BVj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vqJ-Tn-D2n" secondAttribute="bottom" id="AxW-Eh-C6D"/>
+                            <constraint firstItem="vqJ-Tn-D2n" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="TyG-NN-yyC"/>
+                            <constraint firstItem="vqJ-Tn-D2n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="U3R-VK-M1z"/>
+                            <constraint firstItem="vqJ-Tn-D2n" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="mWa-Qh-D9R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addRecipeImageButton" destination="kPm-2Q-40h" id="R0g-CW-0dK"/>
+                        <outlet property="recipeImageView" destination="7tw-oL-tcl" id="mRM-8r-y7a"/>
+                        <outlet property="tableView" destination="vqJ-Tn-D2n" id="P19-nZ-aHM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.95419847328243" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-add-photo" width="24" height="24"/>
+        <image name="img-placeholder2" width="1600" height="1600"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

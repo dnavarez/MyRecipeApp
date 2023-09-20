@@ -11,4 +11,5 @@ struct RecipeModel: Codable {
   let title: String
   let ingredients: [IngredientModel]
   let instruction: String
+  let ownerId: String
 }

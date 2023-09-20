@@ -131,7 +131,8 @@ extension FirestoreServices {
       .setData([
         "title": model.title,
         "ingredients": ingredients,
-        "instruction": model.instruction
+        "instruction": model.instruction,
+        "ownerId": model.ownerId
       ]) { error in
         if let error = error {
           completion(.failure(.other(message: error.localizedDescription)))

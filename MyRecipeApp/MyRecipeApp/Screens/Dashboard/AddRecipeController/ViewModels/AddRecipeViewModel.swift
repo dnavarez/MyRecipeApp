@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 protocol AddRecipeViewModelProtocol {
   var recipeVM: RecipeViewModelProtocol { get set }
@@ -23,7 +24,15 @@ final class AddRecipeViewModel: AddRecipeViewModelProtocol {
     firestoreServices: FirestoreServicesProtocol
   ) {
     self.firestoreServices = firestoreServices
-    recipeVM = RecipeViewModel(model: RecipeModel(title: "", ingredients: [], instruction: ""))
+    
+    let model = RecipeModel(
+      title: "",
+      ingredients: [],
+      instruction: "",
+      ownerId: Auth.auth().currentUser?.uid ?? ""
+    )
+    
+    recipeVM = RecipeViewModel(model: model)
   }
 }
 
@@ -39,7 +48,8 @@ extension AddRecipeViewModel {
     let model = RecipeModel(
       title: recipeVM.name,
       ingredients: ingredientModels,
-      instruction: recipeVM.instruction
+      instruction: recipeVM.instruction,
+      ownerId: recipeVM.ownerId
     )
     
     firestoreServices.postRecipe(with: model) { result in

@@ -53,6 +53,9 @@ private extension DashboardController {
     guard let vc = R.storyboard.myRecipe.myRecipeController()
     else { return UINavigationController() }
     
+    let vm = MyRecipeViewModel(firestoreServices: AppDelegate.shared.appServices.firestoreServices)
+    vc.viewModel = vm
+    
     let nav = UINavigationController(rootViewController: vc)
     nav.tabBarItem.title = "My Recipe"
     nav.tabBarItem.image = R.image.iconList()

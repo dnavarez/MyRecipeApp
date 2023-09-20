@@ -332,8 +332,9 @@
 		342012F82AB8983B00E09A71 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				34EBDA862AB9B100005E0204 /* HeaderView */,
+				34D0B60A2ABAB14B0099899C /* Cells */,
 				346716192AB9E12500DE7864 /* Models */,
-				34D0B6092ABAB1010099899C /* Recipe */,
 				3467160A2AB9C4C100DE7864 /* AlertTextFieldController */,
 				342012F92AB8987500E09A71 /* AlertManager */,
 			);
@@ -632,15 +633,6 @@
 				348C79372AB9AD1C00412059 /* RecipeInstructionCell.xib */,
 			);
 			path = RecipeInstructionCell;
-			sourceTree = "<group>";
-		};
-		34D0B6092ABAB1010099899C /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				34EBDA862AB9B100005E0204 /* HeaderView */,
-				34D0B60A2ABAB14B0099899C /* Cells */,
-			);
-			path = Recipe;
 			sourceTree = "<group>";
 		};
 		34D0B60A2ABAB14B0099899C /* Cells */ = {

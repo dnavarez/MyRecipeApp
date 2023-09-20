@@ -156,7 +156,11 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let vc = R.storyboard.recipeDetail.recipeDetailController() else { return }
     
-    let vm = viewModel.items[indexPath.row]
+    let recipeVM = viewModel.items[indexPath.row]
+    let vm = RecipeDetailViewModel(
+      recipeVM: recipeVM,
+      firestoreServices: AppServices.shared.firestoreServices
+    )
     vc.viewModel = vm
     
     navigationController?.pushViewController(vc, animated: true)

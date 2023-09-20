@@ -31,7 +31,7 @@ extension HomeViewModel {
   func fetchRecipes(
     completion: @escaping (Result<[RecipeModel?], ValidationError>) -> Void
   ) {
-    firestoreServices.getRecipies { [weak self] result in
+    firestoreServices.getAllRecipies { [weak self] result in
       switch result {
       case .success(let recipes):
         self?.recipes = recipes

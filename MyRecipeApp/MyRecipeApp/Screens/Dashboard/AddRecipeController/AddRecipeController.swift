@@ -38,6 +38,7 @@ private extension AddRecipeController {
     navigationItem.title = "Add Recipe"
     
     let saveBtn = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(didTapSaveButton))
+    saveBtn.isEnabled = false
     navigationItem.rightBarButtonItem = saveBtn
     
     let cancelBtn = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancelButton))
@@ -65,9 +66,13 @@ private extension AddRecipeController {
       title: "Update Recipe Title",
       textFieldPlaceHolder: ["Enter recipe name"]
     ) { [weak self] values in
-      guard let text = values.first else { return }
-      self?.viewModel.recipeVM.name = text ?? "Unknown recipe name"
-      self?.tableView.reloadData()
+      guard let self = self,
+            let text = values.first
+      else { return }
+      
+      self.viewModel.recipeVM.name = text ?? "Unknown recipe name"
+      self.tableView.reloadData()
+      self.validateSaveButton()
     }
   }
   
@@ -81,6 +86,8 @@ private extension AddRecipeController {
         "Enter quantity here. (160g or 12pcs)"
       ]
     ) { [weak self] values in
+      guard let self = self else { return }
+      
       let name = values.first ?? "Unknown ingredient"
       let qty = values.last ?? ""
       
@@ -91,22 +98,34 @@ private extension AddRecipeController {
       
       let vm = IngredientViewModel(model: model)
       
-      self?.viewModel.recipeVM.ingredients.append(vm)
-      self?.tableView.reloadData()
+      self.viewModel.recipeVM.ingredients.append(vm)
+      self.tableView.reloadData()
+      self.validateSaveButton()
     }
   }
   
   func updateRecipeInstruction() {
     guard let vc = R.storyboard.addInstruction.addInstructionController() else { return }
     vc.onAccept = { [weak self] instruction in
-      self?.viewModel.recipeVM.instruction = instruction
-      self?.tableView.reloadData()
+      guard let self = self else { return }
+      self.viewModel.recipeVM.instruction = instruction
+      self.tableView.reloadData()
+      self.validateSaveButton()
     }
     
     let nav = UINavigationController(rootViewController: vc)
     nav.modalPresentationStyle = .fullScreen
     
     navigationController?.present(nav, animated: true)
+  }
+  
+  func validateSaveButton() {
+    let recipeVM = viewModel.recipeVM
+    if recipeVM.name.count > 0 ||
+        recipeVM.ingredients.count > 0 ||
+        recipeVM.instruction.count > 0 {
+      navigationItem.rightBarButtonItem?.isEnabled = true
+    }
   }
 }
 
@@ -116,7 +135,7 @@ private extension AddRecipeController {
   func didTapSaveButton() {
     SVProgressHUD.show()
     
-    viewModel.postRecipe { [weak self] result in
+    viewModel.postRecipe { result in
       SVProgressHUD.dismiss()
       
       switch result {
@@ -225,6 +244,8 @@ private extension AddRecipeController {
       self?.updateRecipeTitle()
     }
     
+    cell.enableTapGesture()
+    
     return cell
   }
   
@@ -264,6 +285,8 @@ private extension AddRecipeController {
     cell.onUpdateRecipeInstruction = { [weak self] in
       self?.updateRecipeInstruction()
     }
+    
+    cell.enableTapGesture()
     
     return cell
   }

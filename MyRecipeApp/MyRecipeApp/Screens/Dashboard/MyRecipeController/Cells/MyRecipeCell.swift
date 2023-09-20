@@ -14,15 +14,21 @@ class MyRecipeCell: UITableViewCell {
   @IBOutlet weak var recipeNameLabel: UILabel!
   
   // MARK: - Properties
+  var viewModel: RecipeViewModelProtocol! {
+    didSet {
+      update()
+    }
+  }
   
   // MARK: - LifeCycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
   }
 }
 
 // MARK: - Setups
-private extension RecipeCell {
-  func setups() {}
+private extension MyRecipeCell {
+  func update() {
+    recipeNameLabel.text = viewModel.name
+  }
 }

@@ -56,7 +56,7 @@ private extension RecipeDetailController {
         target: self,
         action: #selector(didTapEdit)
       )
-      navigationItem.rightBarButtonItem = backBtn
+      navigationItem.rightBarButtonItem = editBtn
     }
   }
   
@@ -84,7 +84,18 @@ private extension RecipeDetailController {
   
   @objc
   func didTapEdit() {
+    guard let vc = R.storyboard.editRecipe.editRecipeController() else { return }
     
+    let vm = EditRecipeViewModel(
+      recipeVM: viewModel,
+      firestoreServices: AppDelegate.shared.appServices.firestoreServices
+    )
+    vc.viewModel = vm
+    
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .fullScreen
+    
+    navigationController?.present(nav, animated: true)
   }
 }
 

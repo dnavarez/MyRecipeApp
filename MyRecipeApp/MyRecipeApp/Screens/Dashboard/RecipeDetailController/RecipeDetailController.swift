@@ -17,7 +17,7 @@ class RecipeDetailController: UIViewController {
   @IBOutlet weak var recipeImageView: UIImageView!
   
   // MARK: - Properties
-  var viewModel: RecipeViewModelProtocol!
+  var viewModel: RecipeDetailViewModelProtocol!
   
   // MARK: - LifeCycle
   
@@ -49,15 +49,26 @@ private extension RecipeDetailController {
     )
     navigationItem.leftBarButtonItem = backBtn
     
-    if Auth.auth().currentUser?.uid == viewModel.ownerId {
-      let editBtn = UIBarButtonItem(
-        image: R.image.iconEdit(),
-        style: .done,
-        target: self,
-        action: #selector(didTapEdit)
-      )
-      navigationItem.rightBarButtonItem = editBtn
+    if Auth.auth().currentUser?.uid == viewModel.recipeVM.ownerId {
+      addRightBarButtons()
     }
+  }
+  
+  func addRightBarButtons() {
+    let deleteBtn = UIBarButtonItem(
+      image: R.image.iconDelete(),
+      style: .done,
+      target: self,
+      action: #selector(didTapDelete)
+    )
+    
+    let editBtn = UIBarButtonItem(
+      image: R.image.iconEdit(),
+      style: .done,
+      target: self,
+      action: #selector(didTapEdit)
+    )
+  navigationItem.rightBarButtonItems = [editBtn, deleteBtn]
   }
   
   func setupTableView() {
@@ -73,7 +84,27 @@ private extension RecipeDetailController {
 }
 
 // MARK: - Methods
-private extension RecipeDetailController {}
+private extension RecipeDetailController {
+  func deleteRecipe() {
+    SVProgressHUD.show()
+    
+    viewModel.deleteRecipe { [weak self] result in
+      guard let self = self else { return }
+      SVProgressHUD.dismiss()
+      
+      switch result {
+      case .success():
+        SVProgressHUD.showSuccess(withStatus: "Recipe has been successfully deleted.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+          SVProgressHUD.dismiss()
+          self.navigationController?.popViewController(animated: true)
+        }
+      case .failure(let error):
+        SVProgressHUD.showError(withStatus: error.localizedDescription)
+      }
+    }
+  }
+}
 
 // MARK: - Events
 private extension RecipeDetailController {
@@ -87,7 +118,7 @@ private extension RecipeDetailController {
     guard let vc = R.storyboard.editRecipe.editRecipeController() else { return }
     
     let vm = EditRecipeViewModel(
-      recipeVM: viewModel,
+      recipeVM: viewModel.recipeVM,
       firestoreServices: AppDelegate.shared.appServices.firestoreServices
     )
     vc.viewModel = vm
@@ -96,6 +127,25 @@ private extension RecipeDetailController {
     nav.modalPresentationStyle = .fullScreen
     
     navigationController?.present(nav, animated: true)
+  }
+  
+  @objc
+  func didTapDelete() {
+    let alertVC = UIAlertController(
+      title: "Are you sure you want to delete this recipe?",
+      message: nil,
+      preferredStyle: .alert
+    )
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+    let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: { [weak self] _ in
+      self?.deleteRecipe()
+    })
+    
+    alertVC.addAction(cancelAction)
+    alertVC.addAction(deleteAction)
+    
+    self.present(alertVC, animated: true)
   }
 }
 
@@ -112,7 +162,7 @@ extension RecipeDetailController: UITableViewDelegate, UITableViewDataSource {
     numberOfRowsInSection section: Int
   ) -> Int {
     // Return the number of rows for ingredients else return only 1
-    return section == 1 ? viewModel.ingredients.count : 1
+    return section == 1 ? viewModel.recipeVM.ingredients.count : 1
   }
   
   func tableView(
@@ -175,7 +225,7 @@ private extension RecipeDetailController {
     ) as? RecipeTitleCell
     else { return RecipeTitleCell() }
     
-    cell.updateRecipeTitle(viewModel.name)
+    cell.updateRecipeTitle(viewModel.recipeVM.name)
     
     return cell
   }
@@ -185,7 +235,7 @@ private extension RecipeDetailController {
   ) -> UITableViewCell {
     let emptyCell = emptyCellWithMessage("No Ingredients added yet.")
     let ingredientCell = recipeIngredientCell(indexPath)
-    let cell = viewModel.ingredients.count == 0 ? emptyCell : ingredientCell
+    let cell = viewModel.recipeVM.ingredients.count == 0 ? emptyCell : ingredientCell
     return cell
   }
   
@@ -197,7 +247,7 @@ private extension RecipeDetailController {
     ) as? RecipeIngredientCell
     else { return RecipeIngredientCell() }
     
-    let vm = viewModel.ingredients[indexPath.row]
+    let vm = viewModel.recipeVM.ingredients[indexPath.row]
     cell.viewModel = vm
     
     return cell
@@ -211,7 +261,7 @@ private extension RecipeDetailController {
     ) as? RecipeInstructionCell
     else { return RecipeInstructionCell() }
     
-    cell.updateRecipeInstruction(viewModel.instruction)
+    cell.updateRecipeInstruction(viewModel.recipeVM.instruction)
     
     return cell
   }

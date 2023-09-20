@@ -31,6 +31,12 @@ protocol FirestoreServicesProtocol {
   ///   - model: The specific recipe model you wanted to update
   ///   - completion: A completion with success or failure response
   func putRecipe(with model: RecipeModel, completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void)
+  
+  /// A method to delete specific recipe
+  /// - Parameters:
+  ///   - documentId: The specific recipe id you wanted to update
+  ///   - completion: A completion with success or failure response
+  func deleteRecipe(with documentId: String, completion: @escaping (Result<Void, ValidationError>) -> Void)
 }
 
 final class FirestoreServices: FirestoreServicesProtocol {
@@ -161,9 +167,7 @@ extension FirestoreServices {
     with model: RecipeModel,
     completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void
   ) {
-    guard
-      let currentUser = Auth.auth().currentUser,
-      let docId = model.id
+    guard let docId = model.id
     else {
       return completion(.failure(.other(message: ValidationError.unknownError.localizedDescription)))
     }
@@ -176,7 +180,7 @@ extension FirestoreServices {
     })
     
     db.collection("users")
-      .document(currentUser.uid)
+      .document(model.ownerId)
       .collection("recipes")
       .document(docId)
       .setData([
@@ -191,6 +195,29 @@ extension FirestoreServices {
         }
         
         completion(.success(model))
+      }
+  }
+  
+  func deleteRecipe(
+    with documentId: String,
+    completion: @escaping (Result<Void, ValidationError>) -> Void
+  ) {
+    guard let currentUser = Auth.auth().currentUser
+    else {
+      return completion(.failure(.other(message: ValidationError.unknownError.localizedDescription)))
+    }
+    
+    db.collection("users")
+      .document(currentUser.uid)
+      .collection("recipes")
+      .document(documentId)
+      .delete() { error in
+        if let error = error {
+          completion(.failure(.other(message: error.localizedDescription)))
+          return
+        }
+        
+        completion(.success(()))
       }
   }
 }

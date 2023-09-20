@@ -130,4 +130,13 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let vc = R.storyboard.recipeDetail.recipeDetailController() else { return }
+    
+    let vm = viewModel.items[indexPath.row]
+    vc.viewModel = vm
+    
+    navigationController?.pushViewController(vc, animated: true)
+  }
 }

@@ -27,6 +27,7 @@ target 'MyRecipeApp' do
   app_pods
   
   target 'MyRecipeAppTests' do
+    use_frameworks!
     inherit! :search_paths
     # Pods for testing
   end

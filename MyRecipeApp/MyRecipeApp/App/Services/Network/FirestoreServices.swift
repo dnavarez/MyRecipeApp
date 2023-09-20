@@ -142,5 +142,40 @@ extension FirestoreServices {
         completion(.success(model))
       }
   }
+  
+  func putRecipe(
+    with model: RecipeModel,
+    completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void
+  ) {
+    guard let currentUser = Auth.auth().currentUser
+    else {
+      return completion(.failure(.other(message: ValidationError.unknownError.localizedDescription)))
+    }
+    
+    let ingredients = model.ingredients.map({
+      [
+        "name": $0.name,
+        "quantity": $0.quantity
+      ]
+    })
+    
+    db.collection("users")
+      .document(currentUser.uid)
+      .collection("recipes")
+      .document()
+      .setData([
+        "title": model.title,
+        "ingredients": ingredients,
+        "instruction": model.instruction,
+        "ownerId": model.ownerId
+      ]) { error in
+        if let error = error {
+          completion(.failure(.other(message: error.localizedDescription)))
+          return
+        }
+        
+        completion(.success(model))
+      }
+  }
 }
 

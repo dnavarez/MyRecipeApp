@@ -20,11 +20,17 @@ protocol FirestoreServicesProtocol {
   ///   - completion: A completion with success or failure response
   func getMyRecipies(completion: @escaping (Result<[RecipeModel], ValidationError>) -> Void)
   
-  /// A method to register the user
+  /// A method to post new recipe
   /// - Parameters:
-  ///   - userRequest: The user information (email and password)
+  ///   - model: The specific recipe model you wanted to post
   ///   - completion: A completion with success or failure response
   func postRecipe(with model: RecipeModel, completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void)
+  
+  /// A method to update specific recipe
+  /// - Parameters:
+  ///   - model: The specific recipe model you wanted to update
+  ///   - completion: A completion with success or failure response
+  func putRecipe(with model: RecipeModel, completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void)
 }
 
 final class FirestoreServices: FirestoreServicesProtocol {
@@ -50,6 +56,7 @@ extension FirestoreServices {
         var models: [RecipeModel] = []
 
         for document in documents {
+          let docId = document.documentID
           let data = document.data()
 
           guard let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted) else {
@@ -60,7 +67,10 @@ extension FirestoreServices {
           do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let recipeModel = try decoder.decode(RecipeModel.self, from: jsonData)
+            
+            var recipeModel = try decoder.decode(RecipeModel.self, from: jsonData)
+            recipeModel.id = docId
+            
             models.append(recipeModel)
           } catch{}
         }
@@ -89,6 +99,7 @@ extension FirestoreServices {
         var models: [RecipeModel] = []
         
         for document in documents {
+          let docId = document.documentID
           let data = document.data()
           
           guard let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted) else {
@@ -99,7 +110,10 @@ extension FirestoreServices {
           do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let recipeModel = try decoder.decode(RecipeModel.self, from: jsonData)
+            
+            var recipeModel = try decoder.decode(RecipeModel.self, from: jsonData)
+            recipeModel.id = docId
+            
             models.append(recipeModel)
           } catch{}
         }
@@ -147,7 +161,9 @@ extension FirestoreServices {
     with model: RecipeModel,
     completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void
   ) {
-    guard let currentUser = Auth.auth().currentUser
+    guard
+      let currentUser = Auth.auth().currentUser,
+      let docId = model.id
     else {
       return completion(.failure(.other(message: ValidationError.unknownError.localizedDescription)))
     }
@@ -162,7 +178,7 @@ extension FirestoreServices {
     db.collection("users")
       .document(currentUser.uid)
       .collection("recipes")
-      .document()
+      .document(docId)
       .setData([
         "title": model.title,
         "ingredients": ingredients,

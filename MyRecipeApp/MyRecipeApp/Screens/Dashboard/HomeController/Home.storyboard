@@ -17,9 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data to display" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x94-dR-gna">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-5s-BVn">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kHE-FJ-q1p" id="dtJ-Z7-Rl5"/>
                                     <outlet property="delegate" destination="kHE-FJ-q1p" id="p6W-B7-7vv"/>
@@ -29,13 +35,18 @@
                         <viewLayoutGuide key="safeArea" id="2IA-md-UgV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2IA-md-UgV" firstAttribute="trailing" secondItem="x94-dR-gna" secondAttribute="trailing" id="6rf-jb-Flw"/>
                             <constraint firstItem="dQa-5s-BVn" firstAttribute="top" secondItem="2IA-md-UgV" secondAttribute="top" id="91t-Fu-f7i"/>
                             <constraint firstItem="dQa-5s-BVn" firstAttribute="trailing" secondItem="2IA-md-UgV" secondAttribute="trailing" id="B1F-TM-cIG"/>
+                            <constraint firstAttribute="bottom" secondItem="x94-dR-gna" secondAttribute="bottom" id="NEb-P9-QkM"/>
+                            <constraint firstItem="x94-dR-gna" firstAttribute="leading" secondItem="2IA-md-UgV" secondAttribute="leading" id="NKe-Of-Tq4"/>
                             <constraint firstAttribute="bottom" secondItem="dQa-5s-BVn" secondAttribute="bottom" id="bmM-hx-3Jo"/>
                             <constraint firstItem="dQa-5s-BVn" firstAttribute="leading" secondItem="2IA-md-UgV" secondAttribute="leading" id="dff-hF-P6Y"/>
+                            <constraint firstItem="x94-dR-gna" firstAttribute="top" secondItem="2IA-md-UgV" secondAttribute="top" id="ri2-h2-cDY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyMsgLabel" destination="x94-dR-gna" id="RiR-kI-xuy"/>
                         <outlet property="tableView" destination="dQa-5s-BVn" id="txN-hW-z9L"/>
                     </connections>
                 </viewController>
@@ -45,6 +56,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

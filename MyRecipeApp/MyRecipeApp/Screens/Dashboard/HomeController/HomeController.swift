@@ -13,6 +13,7 @@ class HomeController: UIViewController {
   
   // MARK: - IBOutlet
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var emptyMsgLabel: UILabel!
   
   // MARK: - Properties
   var viewModel: HomeViewModelProtocol!
@@ -76,15 +77,19 @@ private extension HomeController {
     SVProgressHUD.show()
     
     viewModel.fetchRecipes { [weak self] result in
+      guard let self = self else { return }
+      
       SVProgressHUD.dismiss()
-      self?.tableView.refreshControl?.endRefreshing()
+      self.tableView.refreshControl?.endRefreshing()
       
       switch result {
       case .success(_):
-        self?.tableView.reloadData()
+        self.tableView.reloadData()
       case .failure(let error):
         SVProgressHUD.showError(withStatus: error.localizedDescription)
       }
+      
+      self.emptyMsgLabel.isHidden = self.viewModel.items.count > 0
     }
   }
 }

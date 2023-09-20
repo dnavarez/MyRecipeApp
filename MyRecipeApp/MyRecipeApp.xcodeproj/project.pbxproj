@@ -58,6 +58,7 @@
 		348C79352AB9AD0A00412059 /* RecipeIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348C79332AB9AD0A00412059 /* RecipeIngredientCell.xib */; };
 		348C79382AB9AD1C00412059 /* RecipeInstructionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C79362AB9AD1C00412059 /* RecipeInstructionCell.swift */; };
 		348C79392AB9AD1C00412059 /* RecipeInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348C79372AB9AD1C00412059 /* RecipeInstructionCell.xib */; };
+		34D0B6122ABABA490099899C /* MyRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D0B6112ABABA490099899C /* MyRecipeViewModel.swift */; };
 		34E807D92AB9FC4C00F01DD8 /* AddInstructionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E807D82AB9FC4C00F01DD8 /* AddInstructionController.swift */; };
 		34E807DB2AB9FC5700F01DD8 /* AddInstruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E807DA2AB9FC5700F01DD8 /* AddInstruction.storyboard */; };
 		34E807DD2ABA0C5400F01DD8 /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E807DC2ABA0C5400F01DD8 /* FirestoreServices.swift */; };
@@ -145,6 +146,7 @@
 		348C79332AB9AD0A00412059 /* RecipeIngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeIngredientCell.xib; sourceTree = "<group>"; };
 		348C79362AB9AD1C00412059 /* RecipeInstructionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInstructionCell.swift; sourceTree = "<group>"; };
 		348C79372AB9AD1C00412059 /* RecipeInstructionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeInstructionCell.xib; sourceTree = "<group>"; };
+		34D0B6112ABABA490099899C /* MyRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeViewModel.swift; sourceTree = "<group>"; };
 		34E807D82AB9FC4C00F01DD8 /* AddInstructionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInstructionController.swift; sourceTree = "<group>"; };
 		34E807DA2AB9FC5700F01DD8 /* AddInstruction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddInstruction.storyboard; sourceTree = "<group>"; };
 		34E807DC2ABA0C5400F01DD8 /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
@@ -399,12 +401,12 @@
 		342013072AB8ADF400E09A71 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				34E807E02ABA329200F01DD8 /* RecipeDetailController */,
 				342013082AB8AE0C00E09A71 /* DashboardController */,
 				348C790E2AB96B8900412059 /* HomeController */,
 				348C79152AB9A17A00412059 /* MyRecipeController */,
 				348C79202AB9A63900412059 /* AddRecipeController */,
 				34E807D72AB9FBED00F01DD8 /* AddInstructionController */,
+				34E807E02ABA329200F01DD8 /* RecipeDetailController */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -582,6 +584,7 @@
 		348C79172AB9A19300412059 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				34D0B6112ABABA490099899C /* MyRecipeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				342012AF2AB8563C00E09A71 /* AppDelegate.swift in Sources */,
 				34E807D92AB9FC4C00F01DD8 /* AddInstructionController.swift in Sources */,
 				348C79192AB9A1A400412059 /* MyRecipeController.swift in Sources */,
+				34D0B6122ABABA490099899C /* MyRecipeViewModel.swift in Sources */,
 				342013272AB8D58E00E09A71 /* AppDelegate+RootViewController.swift in Sources */,
 				3420130C2AB8AE5200E09A71 /* DashboardController.swift in Sources */,
 				34EBDA8E2AB9B696005E0204 /* RecipeEmptyCell.swift in Sources */,

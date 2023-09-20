@@ -11,7 +11,7 @@ import FirebaseAuth
 protocol EditRecipeViewModelProtocol {
   var recipeVM: RecipeViewModelProtocol { get set }
   
-  func postRecipe(
+  func updateRecipe(
     completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void
   )
 }
@@ -21,24 +21,17 @@ final class EditRecipeViewModel: EditRecipeViewModelProtocol {
   private var firestoreServices: FirestoreServicesProtocol
   
   init(
+    recipeVM: RecipeViewModelProtocol,
     firestoreServices: FirestoreServicesProtocol
   ) {
     self.firestoreServices = firestoreServices
-    
-    let model = RecipeModel(
-      title: "",
-      ingredients: [],
-      instruction: "",
-      ownerId: Auth.auth().currentUser?.uid ?? ""
-    )
-    
-    recipeVM = RecipeViewModel(model: model)
+    self.recipeVM = recipeVM
   }
 }
 
 // MARK: - Firebase
 extension EditRecipeViewModel {
-  func postRecipe(
+  func updateRecipe(
     completion: @escaping (Result<RecipeModel?, ValidationError>) -> Void
   ) {
     let ingredientModels = recipeVM.ingredients.map({
@@ -46,13 +39,14 @@ extension EditRecipeViewModel {
     })
     
     let model = RecipeModel(
+      id: recipeVM.id,
       title: recipeVM.name,
       ingredients: ingredientModels,
       instruction: recipeVM.instruction,
       ownerId: recipeVM.ownerId
     )
     
-    firestoreServices.postRecipe(with: model) { result in
+    firestoreServices.putRecipe(with: model) { result in
       switch result {
       case .success(let model):
         completion(.success(model))

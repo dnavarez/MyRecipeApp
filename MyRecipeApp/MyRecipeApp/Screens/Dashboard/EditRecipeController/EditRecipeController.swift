@@ -17,7 +17,7 @@ class EditRecipeController: UIViewController {
   @IBOutlet weak var addRecipeImageButton: UIButton!
   
   // MARK: - Properties
-  var viewModel: AddRecipeViewModelProtocol!
+  var viewModel: EditRecipeViewModelProtocol!
   
   // MARK: - LifeCycle
   
@@ -35,7 +35,7 @@ private extension EditRecipeController {
   }
   
   func setupNavigationBar() {
-    navigationItem.title = "Add Recipe"
+    navigationItem.title = "Edit Recipe"
     
     let saveBtn = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(didTapSaveButton))
     saveBtn.isEnabled = false
@@ -135,7 +135,7 @@ private extension EditRecipeController {
   func didTapSaveButton() {
     SVProgressHUD.show()
     
-    viewModel.postRecipe { result in
+    viewModel.updateRecipe { result in
       SVProgressHUD.dismiss()
       
       switch result {

@@ -1,28 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Edit Recipe Controller-->
+        <scene sceneID="3wu-Tf-IIv">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="EditRecipeController" id="Jpe-Ey-3aB" customClass="EditRecipeController" customModule="MyRecipeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sz0-0R-ZCz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-GF-unC">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="W11-0N-IP2">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-iY-eNh">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                            <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJi-HG-8sf">
+                                            <rect key="frame" x="342" y="16" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="97B-Cy-9ky"/>
+                                                <constraint firstAttribute="width" constant="35" id="ta9-VB-b7R"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="icon-add-photo"/>
+                                            <connections>
+                                                <action selector="addRecipeImageButtonTapped:" destination="Jpe-Ey-3aB" eventType="touchUpInside" id="Eei-Pi-A5h"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="EJ2-iY-eNh" secondAttribute="trailing" id="ECy-op-NmY"/>
+                                        <constraint firstItem="EJ2-iY-eNh" firstAttribute="leading" secondItem="W11-0N-IP2" secondAttribute="leading" id="HYi-t2-g8l"/>
+                                        <constraint firstAttribute="trailing" secondItem="JJi-HG-8sf" secondAttribute="trailing" constant="16" id="YbY-WV-N0X"/>
+                                        <constraint firstAttribute="bottom" secondItem="EJ2-iY-eNh" secondAttribute="bottom" id="cNK-4S-qH9"/>
+                                        <constraint firstItem="JJi-HG-8sf" firstAttribute="top" secondItem="W11-0N-IP2" secondAttribute="top" constant="16" id="kX6-rZ-zSR"/>
+                                        <constraint firstItem="EJ2-iY-eNh" firstAttribute="top" secondItem="W11-0N-IP2" secondAttribute="top" id="zay-1p-cDc"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jpe-Ey-3aB" id="uZ2-Te-Kcd"/>
+                                    <outlet property="delegate" destination="Jpe-Ey-3aB" id="uda-sh-H9r"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SPb-ZU-opW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mnv-GF-unC" firstAttribute="trailing" secondItem="SPb-ZU-opW" secondAttribute="trailing" id="3Sa-40-3vQ"/>
+                            <constraint firstItem="mnv-GF-unC" firstAttribute="top" secondItem="Sz0-0R-ZCz" secondAttribute="top" id="MfA-3R-Gc1"/>
+                            <constraint firstAttribute="bottom" secondItem="mnv-GF-unC" secondAttribute="bottom" id="PwK-qf-fF2"/>
+                            <constraint firstItem="mnv-GF-unC" firstAttribute="leading" secondItem="SPb-ZU-opW" secondAttribute="leading" id="hXg-N9-VyZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addRecipeImageButton" destination="JJi-HG-8sf" id="W8S-SI-tdO"/>
+                        <outlet property="recipeImageView" destination="EJ2-iY-eNh" id="g6K-1G-TU5"/>
+                        <outlet property="tableView" destination="mnv-GF-unC" id="XMY-In-ide"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSO-CE-MwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="125.95419847328243" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icon-add-photo" width="24" height="24"/>
+        <image name="img-placeholder2" width="1600" height="1600"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

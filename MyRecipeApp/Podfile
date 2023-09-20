@@ -18,8 +18,8 @@ def app_pods
   # Firebase
   pod 'FirebaseCore',                       '~> 10.15.0'
   pod 'FirebaseAuth',                       '~> 10.15.0'
-  pod 'FirebaseFirestore'
-  pod 'FirebaseStorage'
+  pod 'FirebaseFirestore',                  '~> 10.15.0'
+  pod 'FirebaseStorage',                    '~> 10.15.0'
 end
 
 target 'MyRecipeApp' do

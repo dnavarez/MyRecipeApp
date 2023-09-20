@@ -776,8 +776,8 @@ DEPENDENCIES:
   - AlamofireNetworkActivityLogger (~> 3.4.0)
   - FirebaseAuth (~> 10.15.0)
   - FirebaseCore (~> 10.15.0)
-  - FirebaseFirestore
-  - FirebaseStorage
+  - FirebaseFirestore (~> 10.15.0)
+  - FirebaseStorage (~> 10.15.0)
   - R.swift (~> 7.3.2)
   - SDWebImage (~> 5.18.1)
   - SVProgressHUD (~> 2.2.5)
@@ -840,6 +840,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Valet: 371e7c0b0387f0659bb23ddd255c4718ca1f0ef9
 
-PODFILE CHECKSUM: 9a7201c4a97d1b71d6be846e8c58a4c7b5e4b8b8
+PODFILE CHECKSUM: f3151d62ef60508850f3061d838369c030ea990d
 
 COCOAPODS: 1.12.1

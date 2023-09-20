@@ -22,6 +22,10 @@ class MyRecipeController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setups()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     fetchRecipes()
   }
 }
@@ -56,6 +60,13 @@ private extension MyRecipeController {
   func setupTableView() {
     tableView.addPadding()
     tableView.registerCells(nibs: [R.nib.recipeCell])
+    setupTableViewRefreshControl()
+  }
+  
+  func setupTableViewRefreshControl() {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(didRefreshTable), for: .valueChanged)
+    tableView.refreshControl = refreshControl
   }
 }
 
@@ -110,6 +121,11 @@ private extension MyRecipeController {
     nav.modalPresentationStyle = .fullScreen
     
     navigationController?.present(nav, animated: true)
+  }
+  
+  @objc
+  func didRefreshTable() {
+    fetchRecipes()
   }
 }
 

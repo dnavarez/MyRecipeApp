@@ -41,8 +41,8 @@ private extension AddRecipeController {
     saveBtn.isEnabled = false
     navigationItem.rightBarButtonItem = saveBtn
     
-    let cancelBtn = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancelButton))
-    navigationItem.leftBarButtonItem = cancelBtn
+    let closeBtn = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(didTapCloseButton))
+    navigationItem.leftBarButtonItem = closeBtn
   }
   
   func setupTableView() {
@@ -148,7 +148,7 @@ private extension AddRecipeController {
   }
   
   @objc
-  func didTapCancelButton() {
+  func didTapCloseButton() {
     navigationController?.dismiss(animated: true)
   }
   
